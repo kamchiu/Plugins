@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>custom scrollBar Demo</title>
+	<link rel="stylesheet" href="normalize.css">
+	<style>
+		* {box-sizing: border-box;}
+		body {background-color: #f1f1f1;}
+		.scroll-wrap {
+			position: relative;
+			width: 600px;
+			margin: 20px auto;
+		}
+		.scroll-content {
+			padding: 0 20px;
+			
+			height: 400px;
+			overflow: hidden;
+			
+			background: #fff;
+		}
+		.scroll-content p {
+			color: #333;
+			font: 14px/2 "microsoft yahei";
+			text-indent: 2em;
+		}
+		.scroll-bar {
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: #eaeaea;
+			width: 10px;
+			height: 400px;
+		}
+		.scroll-block {
+			height: 50px;
+			position: absolute;
+			top: 0;
+			left: 1px;
+			width: 8px;
+			background: #3080dc;
+		}
+	</style>
+</head>
+<body>
+	<section class="scroll-wrap">
+		<!-- 滚动内容 -->
+		<div class="scroll-content">
+			<p>9月7日，天津市河东区靖泰里的阳光双语幼儿园一名4岁女童婷婷长时间被锁“校车”内窒息而死，事发当日，这辆“校车”只接送了婷婷这一个孩子。被锁车内约8个小时后，司机张某才发现孩子一直在车内，送至医院抢救时，孩子已无呼吸，嘴唇、脖子青紫，眼睛睁着。目前，园长赵某和司机张某已被警方采取刑事强制措施。（9月9日澎湃新闻网）</p>
+			<p>照例是清晨不到八点，当4岁女童婷婷如往常一般，与妈妈挥手说再见时，却万万没想到，这竟成了永别：从坐上校车到下午四点放学，整整8个小时，一直被困车内。待察觉时，孩子嘴唇青紫，眼睛圆睁，肢体僵硬，早已没有了生命气息。而据医生说，只有长达一两个小时以上的窒息，才会出现上述征象。</p>
+			<p>一个如花的小生命，还没来得及盛开，就这样枯萎了，实在让人心疼。事实上，似幼儿长时间被锁校车内乃至窒息的事件，近年屡有发生，已成为社会的一个痛点。或许，每一起事故，都是一个意外、一次疏忽。但类似的悲剧接二连三，就不能归之于偶然了。因而，人们有必要反思，校车内的幼儿何以常常让人遗忘？</p>
+			<p>对于一所尽职尽责的幼儿园，守护婷婷这样的孩子原本有四道“安全岗”：司机、门岗、教师及园长。然而，当校车抵达、却不见幼儿的情况下，司机自顾自离开；门岗不闻不问；老师唯一的动作是在婷婷的考勤栏中打了个叉；一向勤勉的园长当天居然没巡查。显然，熟视无睹的背后，是爱心的缺失以及管理的无序。而正是这一切，导致了婷婷的噩运。</p>
+			<p>9月7日，天津市河东区靖泰里的阳光双语幼儿园一名4岁女童婷婷长时间被锁“校车”内窒息而死，事发当日，这辆“校车”只接送了婷婷这一个孩子。被锁车内约8个小时后，司机张某才发现孩子一直在车内，送至医院抢救时，孩子已无呼吸，嘴唇、脖子青紫，眼睛睁着。目前，园长赵某和司机张某已被警方采取刑事强制措施。（9月9日澎湃新闻网）</p>
+			<p>照例是清晨不到八点，当4岁女童婷婷如往常一般，与妈妈挥手说再见时，却万万没想到，这竟成了永别：从坐上校车到下午四点放学，整整8个小时，一直被困车内。待察觉时，孩子嘴唇青紫，眼睛圆睁，肢体僵硬，早已没有了生命气息。而据医生说，只有长达一两个小时以上的窒息，才会出现上述征象。</p>
+			<p>一个如花的小生命，还没来得及盛开，就这样枯萎了，实在让人心疼。事实上，似幼儿长时间被锁校车内乃至窒息的事件，近年屡有发生，已成为社会的一个痛点。或许，每一起事故，都是一个意外、一次疏忽。但类似的悲剧接二连三，就不能归之于偶然了。因而，人们有必要反思，校车内的幼儿何以常常让人遗忘？</p>
+			<p>对于一所尽职尽责的幼儿园，守护婷婷这样的孩子原本有四道“安全岗”：司机、门岗、教师及园长。然而，当校车抵达、却不见幼儿的情况下，司机自顾自离开；门岗不闻不问；老师唯一的动作是在婷婷的考勤栏中打了个叉；一向勤勉的园长当天居然没巡查。显然，熟视无睹的背后，是爱心的缺失以及管理的无序。而正是这一切，导致了婷婷的噩运。</p>
+		</div>
+		<div class="scroll-bar">
+			<div class="scroll-block"></div>
+		</div>
+	</section>
+
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="customScrollBar.js"></script>
+	<script>
+		new CustomScrollBar({
+			scrollDirection: 'y',
+			conSelector: ".scroll-content",
+			barSelector: ".scroll-bar",
+			sliderSelector: ".scroll-block",
+			wheelStep: '20'
+		});
+	</script>
+</body>
+</html>
