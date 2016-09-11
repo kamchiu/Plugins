@@ -117,7 +117,7 @@
     scrollTo : function(positionVal){
       var self = this;
       self.$cont.scrollTop(positionVal);
-    };
+    }
   });
    win.CustomScrollBar = CustomScrollBar;
   })(window,document,jQuery);
