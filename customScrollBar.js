@@ -15,13 +15,13 @@
 		  self.options = {
 			  scrollDirection: 'y',  //滚动方向
 			  conSelector: "",       //滚动内容选择器   *必填
-			  barSelector: "",       //滚动条选择器     *必填
-			  sliderSelector: "",    //滑块选择器
+			  barSelector: "",       //滚动条选择器     
+			  sliderSelector: "",    //滑块选择器       *必填
 			  wheelStep: "10"
 		  }
 			$.extend(true,self.options,options || {});
 
-			console.log(self.options);
+			// console.log(self.options);
 
 			this._initDOM();
 
